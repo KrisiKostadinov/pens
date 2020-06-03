@@ -1,0 +1,128 @@
+html {
+    font-family: cursive, sans-serif;
+}
+
+.cards-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#41ff90, #003617);
+}
+
+.cards {
+    width: fit-content;
+    height: fit-content;
+    perspective: 600px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    border-radius: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 140px;
+    transition: transform 200ms;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-dismiss {
+    background-color: #41ff90;
+    box-shadow: 0 0 7px #00361777;
+    transform: rotateY(180deg);
+    cursor: not-allowed;
+}
+
+.face-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 140px;
+    backface-visibility: hidden;
+    border: 10px;
+    color: #fff;
+    border-radius: 7px;
+}
+
+.card .card-front {
+    background-color: #4c00ff;
+    transform: rotateY(180deg);
+    overflow: hidden;
+}
+
+.card .card-back {
+    background-color: rgb(24, 24, 24, .9);
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.card.is-show {
+    transform: rotateY(180deg);
+}
+
+.victory {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    font-size: 2em;
+    background-color: #003617;
+    z-index: 200;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: show-in 200ms ease-in forwards;
+}
+
+.victory h2 {
+    margin: 0;
+}
+
+.victory button {
+    color: #fff;
+    background-color: #41ff90;
+    border: none;
+    padding: 1em 2em;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 0 0 7px #41ff9077;
+}
+
+.piker,
+.seconds {
+    position: absolute;
+    z-index: 100;
+    align-self: flex-start;
+    margin: 0 2em;
+    color: #fff;
+}
+
+.piker {
+    left: 0;
+}
+
+.seconds {
+    right: 0;
+}
+
+@keyframes show-in {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
