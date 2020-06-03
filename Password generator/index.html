@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <label for="length">Password length <span preview-length>10</span></label>
+            <input length class="slider" type="range" id="length" min="6" value="10" max="20">
+            <div class="btn">
+                <button generate-button>Generate password</button>
+                <button copy-button>Copy</button>
+            </div>
+            <div class="preview">
+                <input class="preview" preview readonly>
+                <h4 class="msg-text-copy" msg-text-copy>Copied!</h4>
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
