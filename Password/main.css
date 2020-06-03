@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    color: #222;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    min-width: 300px;
+    min-height: 400px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 10px #77777777;
+    border-radius: 7px;
+}
+
+.container .numbers,
+.container .info {
+    display: flex;
+}
+
+.container .numbers {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .numbers > h2 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.container .numbers ul,
+.container .info ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+
+li {
+    width: 70px;
+    height: 70px;
+    font-size: 2em;
+    text-align: center;
+    line-height: 70px;
+    color: #fff;
+    background-color: #222;
+    margin: 0.2em;
+    border-radius: 50%;
+    animation: show 200ms forwards ease-in;
+    border: 1px solid #fff;
+    box-shadow: 0 0 7px #77777777;
+}
+
+.input {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button  {
+    -webkit-appearance: none;
+}
+
+input {
+    padding: 1em 2em;
+    border: 1px dotted #222;
+    border-right: none;
+}
+
+.button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #00ff22;
+    color: #fff;
+    border: 1px solid #222;
+    border-left: none;
+    cursor: pointer;
+}
+
+.start-btn {
+    width: 7em;
+    height: 4em;
+    margin: 10px auto;
+    border-radius: 4em;
+    border: 1px solid #fff;
+    box-shadow: 0 0 7px #22222222;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    background-color: #00ff22;
+}
+
+.button:disabled {
+    background-color: #222;
+    cursor: not-allowed;
+}
+
+.correct-number {
+    background-color: #00ff22;
+}
+
+.contains-number {
+    background-color: #d0ff00;
+}
+
+.error-number {
+    background-color: #ff2600;
+}
+
+.info {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+
+.info ul li {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    margin: 10px auto;
+}
+
+.info > h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
