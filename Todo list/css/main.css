@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.todos-container {
+    width: 70%;
+    min-width: 400px;
+    min-height: 70vh;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.empty-list {
+    margin: 20px 0;
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+}
+
+.btn.add {
+    color: #fff;
+    background-color: #0051ff;
+    padding: 0;
+    margin: 0;
+}
+
+.todos-container > button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    line-height: 60px;
+}
+
+.todo-container {
+    list-style: none;
+    padding: 0;
+    width: 70%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.todo-container li {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: show 200ms ease-in forwards;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.todo-container li:hover {
+    background-color: #0051ff77;
+}
+
+form {
+    display: none;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+form textarea {
+    padding: 10px 20px;
+    border: 2px solid #222;
+    outline: none;
+}
+
+form button {
+    width: 60px;
+    font-size: 27px;
+}
+
+.btn:focus,
+.btn:hover {
+    color: #0051ff;
+    border: 2px solid #0051ff;
+    background-color: #fff;
+}
+
+.flex {
+    display: flex;
+}
+
+.invalid {
+    border-color: #ff0000;
+}
+
+ul > .checked {
+    background-color: #15ff0070;
+}
+
+.recognation {
+    display: none;
+    flex-direction: column;
+}
+
+.recognation > div {
+    display: flex;
+    margin: 0 auto;
+}
+
+i {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 27px;
+    color: #0051ff;
+    border: none;
+}
