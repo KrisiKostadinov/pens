@@ -12,6 +12,12 @@
     text-align: center;
 }
 
+.todos-container ul {
+    overflow-y: scroll;
+    max-height: 400px;
+    scroll-behavior: smooth;
+}
+
 .empty-list {
     margin: 20px 0;
 }
@@ -38,7 +44,7 @@ body {
     margin: 0;
 }
 
-.todos-container > button {
+.todos-container > button.btn {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -83,7 +89,7 @@ form {
     justify-content: center;
     position: relative;
     width: fit-content;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 
@@ -127,7 +133,7 @@ ul > .checked {
     margin: 0 auto;
 }
 
-i {
+form > i {
     position: absolute;
     right: 70px;
     top: 50%;
