@@ -1,14 +1,16 @@
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 var recognition = new SpeechRecognition();
 
-$('form > i').hide(200);
+var isCheckWord = false;
+
+$('.todos-container > form > i').hide(200);
 
 recognition.onstart = function() {
-    $('form > i').show(200);
+    $('.todos-container > form > i').show(200);
 }
 
 recognition.onend = function() {
-    $('form > i').hide(200);
+    $('.todos-container > form > i').hide(200);
 }
 
 recognition.onspeechstart = function() {
@@ -16,9 +18,8 @@ recognition.onspeechstart = function() {
 }
 
 recognition.onresult = function(event) {
-    console.log(event);
     var text = event.results[0][0].transcript;
-    $('textarea').val(text);
+    isCheckWord ? $('#randow-todo-container > form > input').val(text) : $('textarea').val(text);;
 }
 
 $('#start-record-btn').on('click', function() {
@@ -27,4 +28,9 @@ $('#start-record-btn').on('click', function() {
 
 $('#pause-record-btn').on('click', function() {
     recognition.stop();
+});
+
+$('#sound').click(() => {
+    recognition.start();
+    isCheckWord = true;
 });

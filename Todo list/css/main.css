@@ -6,7 +6,6 @@
 .todos-container {
     width: 70%;
     min-width: 400px;
-    min-height: 70vh;
     margin: 0 auto;
     position: relative;
     text-align: center;
@@ -30,21 +29,21 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.btn {
+.button {
     border: none;
     cursor: pointer;
     outline: none;
     background-color: transparent;
 }
 
-.btn.add {
+.button.add {
     color: #fff;
     background-color: #0051ff;
     padding: 0;
     margin: 0;
 }
 
-.todos-container > button.btn {
+.todos-container > .button {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -84,7 +83,7 @@ body {
     background-color: #0051ff77;
 }
 
-form {
+.todos-container > form {
     display: none;
     justify-content: center;
     position: relative;
@@ -93,13 +92,13 @@ form {
 }
 
 
-form textarea {
+.todos-container > form textarea {
     padding: 10px 20px;
     border: 2px solid #222;
     outline: none;
 }
 
-form button {
+.todos-container > form .button {
     width: 60px;
     font-size: 27px;
 }
@@ -133,7 +132,7 @@ ul > .checked {
     margin: 0 auto;
 }
 
-form > i {
+.todos-container > form > i {
     position: absolute;
     right: 70px;
     top: 50%;
@@ -141,4 +140,8 @@ form > i {
     font-size: 27px;
     color: #0051ff;
     border: none;
+}
+
+#random-todo-container {
+    margin-top: 20px;
 }

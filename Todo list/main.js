@@ -22,10 +22,14 @@ function getTodos() {
             li.setAttribute('id', todo.id);
             
             li.querySelector('button.dismiss').addEventListener('click', dismissTask);
-            li.querySelector('button.success').addEventListener('click', checkedTask);
+            li.querySelector('button.success').addEventListener('click', learnedTask);
+
+            if(todo.learned) {
+                li.classList.add('checked');
+            }
 
             $('ul').append(li);
-        }); 
+        });
     });
 }
 
@@ -34,9 +38,17 @@ getTodos();
 isEmptyList();
 
 (() => {
-    $('.todos-container > button').click(() => addForm());
-    $('form > button').click(() => addTask(event));
+    $('#add-buttom').click(() => addForm());
+    $('.todos-container > form > button').click(() => addTask(event));
     $('.todos-container > h2').text(`To do list ${todos.length}`);
+    $('#fading-list').click(() => {
+        $('.todos-container > ul').slideToggle(200);
+        if($('#fading-list').text() == 'Скрии списъка') {
+            $('#fading-list').text('Покажи списъка');
+        } else {
+            $('#fading-list').text('Скрии списъка');
+        }
+    });
 })();
 
 function dismissTask() {
@@ -48,11 +60,14 @@ function dismissTask() {
 }
 
 function isEmptyList() {
-    todos.length === 0 ? $('h4').show(200) : $('h4').hide(200);
+    todos.length === 0 ? $('.todos-container > h4').show(200) : $('.todos-container > h4').hide(200);
 }
 
-function checkedTask() {
+function learnedTask() {
     $(this).parent().parent().toggleClass('checked', '');
+    var id = parseInt(this.parentElement.parentElement.id);
+    todos[id].learned = !todos[id].learned;
+    localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 function addTask(event) {
@@ -74,7 +89,7 @@ function addTask(event) {
             saveTodo(context);
             
             li.querySelector('button.dismiss').addEventListener('click', dismissTask);
-            li.querySelector('button.success').addEventListener('click', checkedTask);
+            li.querySelector('button.success').addEventListener('click', learnedTask);
 
             $('ul').append(li);
             
@@ -85,7 +100,7 @@ function addTask(event) {
          });
 
     
-        $('form').fadeOut(200)
+        $('.todos-container > form').fadeOut(200)
             .trigger('reset');
 
         $('#recognation').fadeOut(200)
@@ -94,13 +109,13 @@ function addTask(event) {
 }
 
 function addForm() {
-    $('form').toggle(200)
+    $('.todos-container > form').toggle(200)
         .css('display', 'flex');
     
     $('#recognation').toggle(200)
         .css('display', 'flex');
         
-    $('form textarea').focus();
+    $('.todos-container > form textarea').focus();
 }
 
 function isValid(val) {
