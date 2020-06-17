@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+*:focus {
+    border-color: #ccc;
+}
+
+.app {
+    width: 400px;
+    padding: 20px;
+    margin: 200px auto;
+    background-color: #222;
+    color: #ccc;
+    box-shadow: 0 0 20px #ccc;
+}
+
+.numbers {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    background-color: #222;
+    border: 2px solid #222;
+    border-radius: 2px;
+    color: #ccc;
+    box-shadow: 0 0 7px #777;
+}
+
+input.required {
+    border-color: #f00;
+}
+
+.app > h2 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.btns {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-column-gap: 10px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    color: #ccc;
+    border: 2px solid #222;
+    border-radius: 2px;
+    box-shadow: 0 0 7px #777;
+    background-color: #222;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    color: #777;
+}
+
+.btns button:nth-child(3),
+.btns button:nth-child(4) {
+    display: none;
+}
+
+.success {
+    background-color: #0f0;
+}
+
+.wrong {
+    background-color: #f00;
+}
